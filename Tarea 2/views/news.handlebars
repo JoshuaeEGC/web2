@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de la Búsqueda</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Resultados de la Búsqueda</h1>
+  </header>
+  <main>
+{{#if articles.length}}
+  <a href="/" class="back-button">← Volver a la búsqueda</a>
+  <ul>
+    {{#each articles}}
+      <li>
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <img src="{{this.urlToImage}}" alt="{{this.title}}" class="center-image" style="max-width: 300px; height: auto;">
+        <a href="{{this.url}}" target="_blank">Leer más</a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No se encontraron resultados.</p>
+  <a href="/" class="back-button">← Volver a la búsqueda</a>
+{{/if}}
+  </main>
+</body>
+</html>
